@@ -5,6 +5,7 @@
 	<title>Vehicles Towed in Chicago</title>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js"></script>        
+        <script src="./colorMap.js"></script>
 </head>
 <body>
     <script>
@@ -28,6 +29,7 @@
 	  var svgHeight=maxCount(a)/2.0+20;
           var d=d3.select("svg").attr("height",svgHeight).selectAll("rect").data(a);
           d.enter().append("rect")
+           .style("fill",function(d,i){return(colorMap[d.color])})
            .attr("x",function(d,i){return(i*10)})
 	   .attr("y",function(d,i){return(svgHeight-d.count/2.0)})
            .attr("width",10)

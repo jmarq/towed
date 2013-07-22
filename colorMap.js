@@ -1,0 +1,79 @@
+colorMap={
+  null:"#000000",
+  AME:"#806568",
+BGE:"#f2e7bf ",
+BLK:"#000000",
+BLU:"#0e4bef",
+BRO:"#654321",
+BRZ:"#9c5221",
+CAM:"#13470f",
+COL:"#ff0000",
+COM:"#a7a6b0",
+CPR:"#b4745e",
+CRM:"#e8ceaa",
+DBL:"#00002f",
+DGR:"#013220",
+GLD:"#a98840",
+
+//AMETHYST
+//BEIGE
+//BLACK
+//BLUE
+//BROWN
+//BRONZE
+//CAMOUFLAGE
+//COLORED
+//CHROME/STAINLESS STEEL
+//COPPER
+//CREAM/IVORY
+//BLUE, DARK
+//GREEN, DARK
+//GOLD
+
+LBL:"#4777a3",
+LGR:"#b7df89",
+MAR:"#3f2124",
+MUL:"#ff00ff",
+MVE:"#a67479",
+ONG:"#ff7b00",
+PLE:"#5a005a",
+PNK:"#ef9cb5",
+RED:"#e71837",
+SIL:"#b5b5bd",
+TAN:"#d2b48c",
+TEA:"#008080",
+TPE:"#b4a599",
+TRQ:"#245a61",
+
+//BLUE, LIGHT
+//GREEN, LIGHT
+//MAROON/BURGUNDY
+//MULTI
+//MAUVE
+//ORANGE
+//PURPLE
+//PINK
+//RED
+//SILVER/ALUMINUM
+//TAN
+//TEAL
+//TAUPE
+//TURQUOISE
+
+GRN:"#005221",
+GRY:"#808080",
+LAV:"#a998cd",
+
+//GREEN
+//GRAY
+//LAVENDER
+
+WHI:"#FFFFFF",
+YEL:"#ffff00"
+
+//WHITE
+//YELLOW
+
+
+
+};
