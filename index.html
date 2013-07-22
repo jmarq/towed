@@ -25,7 +25,14 @@
           return(maxSoFar);
 	};
 	d3Chart=function(){
-          var d=d3.select("svg").attr("width").
+	  var svgHeight=maxCount(a)/2.0+20;
+          var d=d3.select("svg").attr("height",svgHeight).style("border","1px solid black").selectAll("rect").data(a);
+          d.enter().append("rect")
+           .attr("x",function(d,i){return(i*10)})
+           .attr("y",function(d,i){return(svgHeight-d.count/2.0)})
+           .attr("width",10)
+           .attr("height",function(d,i){return(d.count/2.0)});
+          d.exit().remove();
 	};
   	$(function(){
           $.getJSON('./colorCounts.json',function(d){
