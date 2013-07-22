@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vehicles Towed in Chicago</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>        
+</head>
+<body>
+    <script>
+	a=[];//the array of vehicle color data
+  	//define some of the main d3 functions,
+	// then call them later in the jquery ready function
+        d3Init=function(w,h){
+	  d3.select("body")
+            .append("svg").attr("width",w || 300).attr("height",h || 300);
+	}; 
+	maxCount=function(countList){
+          var maxSoFar=0;
+          for(var count in countList){
+            if(countList[count].count>maxSoFar){
+              maxSoFar=countList[count].count;
+            }
+          }
+          return(maxSoFar);
+	};
+	d3Chart=function(){
+          var d=d3.select("svg").attr("width").
+	};
+  	$(function(){
+          $.getJSON('./colorCounts.json',function(d){
+	    a=[];
+	    for(key in d){
+             var  newObj={};
+	     newObj['color']=key;
+	     newObj['count']=d[key];
+             a.push(newObj);
+	    }
+	    for(pair in a){
+	      console.log(a[pair].color+"  "+a[pair].count);
+            }
+	  })
+          });
+    </script>
+</body>
+</html>
+<!--
+ck 10 â€“ Please use only the following acceptable body colors codes:
+AME
+BGE
+BLK
+BLU
+BRO
+BRZ
+CAM
+COL
+COM
+CPR
+CRM
+DBL
+DGR
+GLD
+
+AMETHYST
+BEIGE
+BLACK
+BLUE
+BROWN
+BRONZE
+CAMOUFLAGE
+COLORED
+CHROME/STAINLESS STEEL
+COPPER
+CREAM/IVORY
+BLUE, DARK
+GREEN, DARK
+GOLD
+
+LBL
+LGR
+MAR
+MUL
+MVE
+ONG
+PLE
+PNK
+RED
+SIL
+TAN
+TEA
+TPE
+TRQ
+24
+
+BLUE, LIGHT
+GREEN, LIGHT
+MAROON/BURGUNDY
+MULTI
+MAUVE
+ORANGE
+PURPLE
+PINK
+RED
+SILVER/ALUMINUM
+TAN
+TEAL
+TAUPE
+TURQUOISE
+
+GRN
+GRY
+LAV
+
+GREEN
+GRAY
+LAVENDER
+
+WHI
+YEL
+
+WHITE
+YELLOW
+
+-->
