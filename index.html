@@ -6,14 +6,18 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js"></script>        
         <script src="./colorMap.js"></script>
+	<link rel="stylesheet" href="graph.css" />
 </head>
 <body>
+  <div id="colorName"></div>
+  <div id="graphWrap"></div>
+  <h2>Colors of vehicles towed in Chicago from past 90 days</h2>
     <script>
 	a=[];//the array of vehicle color data
   	//define some of the main d3 functions,
 	// then call them later in the jquery ready function
         d3Init=function(w,h){
-	  d3.select("body")
+	  d3.select("#graphWrap")
             .append("svg").attr("width",w || 300).attr("height",h || 300).style("border","1px solid black");
 	}; 
 	maxCount=function(countList){
@@ -35,6 +39,7 @@
            .attr("width",10)
            .attr("height",function(d,i){return(d.count/2.0)});
           d.exit().remove();
+          d.on("mouseover",function(d,i){$("#colorName").html(d.color);});
 	};
   	$(function(){
           d3Init();
