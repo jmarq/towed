@@ -18,7 +18,7 @@
 	// then call them later in the jquery ready function
         d3Init=function(w,h){
 	  d3.select("#graphWrap")
-            .append("svg").attr("width",w || 300).attr("height",h || 300).style("border","1px solid black");
+            .append("svg").attr("width",w || 300).attr("height",h || 300).style("border","1px solid black").attr("tabindex",0);
 	}; 
 	maxCount=function(countList){
           var maxSoFar=0;
@@ -37,9 +37,12 @@
            .attr("x",function(d,i){return(i*(7+5))})
 	   .attr("y",function(d,i){return(svgHeight-d.count/2.0)})
            .attr("width",7)
-           .attr("height",function(d,i){return(d.count/2.0)});
+           .attr("height",function(d,i){return(d.count/2.0)})
+           .attr("tabindex","0");
           d.exit().remove();
-          d.on("mouseover",function(d,i){$("#colorName").html(d.color);});
+          d.on("mouseover",function(d,i){$("#colorName").html(d.color).css({
+               "color":colorMap[d.color], "text-shadow":"1px 1px 2px #333"
+            });});
 	};
   	$(function(){
           d3Init();
