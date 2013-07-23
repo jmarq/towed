@@ -1,6 +1,12 @@
 rect{
-stroke:#ccc;
+stroke:#fff;
 stroke-width:1;
+opacity:0.85;
+}
+
+rect:hover{
+stroke:#0cc;
+opacity:1.0;
 }
 
 svg{

@@ -34,9 +34,9 @@
           var d=d3.select("svg").attr("height",svgHeight).selectAll("rect").data(a);
           d.enter().append("rect")
            .style("fill",function(d,i){return(colorMap[d.color])})
-           .attr("x",function(d,i){return(i*10)})
+           .attr("x",function(d,i){return(i*(7+5))})
 	   .attr("y",function(d,i){return(svgHeight-d.count/2.0)})
-           .attr("width",10)
+           .attr("width",7)
            .attr("height",function(d,i){return(d.count/2.0)});
           d.exit().remove();
           d.on("mouseover",function(d,i){$("#colorName").html(d.color);});
